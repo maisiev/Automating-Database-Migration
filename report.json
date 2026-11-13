@@ -1,0 +1,44 @@
+{
+  "format_version": 1,
+  "id": "catalog-balance",
+  "title": "Fictional catalogue balance",
+  "description": "A synthetic demonstration. No real organization, customer or operational records are included.",
+  "columns": [
+    {
+      "id": "legacy_code",
+      "label": "Product code",
+      "type": "text"
+    },
+    {
+      "id": "legacy_name",
+      "label": "Product name",
+      "type": "text"
+    },
+    {
+      "id": "legacy_quantity",
+      "label": "Available",
+      "type": "integer"
+    },
+    {
+      "id": "legacy_value",
+      "label": "Stock value",
+      "type": "number"
+    },
+    {
+      "id": "legacy_aisle",
+      "label": "Aisle",
+      "type": "text"
+    },
+    {
+      "id": "legacy_low",
+      "label": "Low stock",
+      "type": "boolean"
+    },
+    {
+      "id": "legacy_note",
+      "label": "Unmapped bin note",
+      "type": "text",
+      "visible": false
+    }
+  ]
+}

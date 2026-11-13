@@ -1,0 +1,148 @@
+{
+  "format_version": 1,
+  "tables": {
+    "products": [
+      {
+        "workspace": "demo-a",
+        "sku": "DEMO-01",
+        "title": "Notebook",
+        "available": 3,
+        "unit_price": 1.25,
+        "aisle_id": 10,
+        "enabled": true
+      },
+      {
+        "workspace": "demo-a",
+        "sku": "DEMO-02",
+        "title": "Pencil",
+        "available": 20,
+        "unit_price": 0.5,
+        "aisle_id": 999,
+        "enabled": true
+      },
+      {
+        "workspace": "demo-a",
+        "sku": "DEMO-03",
+        "title": "Disabled example",
+        "available": 1,
+        "unit_price": 1.0,
+        "aisle_id": 10,
+        "enabled": false
+      },
+      {
+        "workspace": "demo-a",
+        "sku": "DEMO-04",
+        "title": "Empty example",
+        "available": 0,
+        "unit_price": 2.0,
+        "aisle_id": 10,
+        "enabled": true
+      },
+      {
+        "workspace": "demo-a",
+        "sku": "DEMO-05",
+        "title": "Unknown count example",
+        "available": null,
+        "unit_price": 2.0,
+        "aisle_id": 10,
+        "enabled": true
+      },
+      {
+        "workspace": "demo-b",
+        "sku": "DEMO-01",
+        "title": "Other workspace example",
+        "available": 100,
+        "unit_price": 9.0,
+        "aisle_id": 10,
+        "enabled": true
+      }
+    ],
+    "aisles": [
+      {
+        "workspace": "demo-a",
+        "id": 10,
+        "name": "Sample shelf"
+      },
+      {
+        "workspace": "demo-b",
+        "id": 10,
+        "name": "Other sample shelf"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "scoped rows, values, exclusions and NULLs",
+      "parameters": {
+        "workspace": "demo-a"
+      },
+      "expected_count": 4,
+      "expected_columns": [
+        "sku",
+        "name",
+        "quantity",
+        "stock_value",
+        "aisle",
+        "low_stock",
+        "legacy_note"
+      ],
+      "expected_rows": [
+        {
+          "sku": "DEMO-01",
+          "stock_value": 3.75,
+          "aisle": "Sample shelf",
+          "low_stock": 1,
+          "legacy_note": null
+        },
+        {
+          "sku": "DEMO-02",
+          "stock_value": 10.0,
+          "aisle": null,
+          "low_stock": 0,
+          "legacy_note": null
+        },
+        {
+          "sku": "DEMO-04",
+          "stock_value": 0,
+          "low_stock": 1,
+          "legacy_note": null
+        },
+        {
+          "sku": "DEMO-05",
+          "stock_value": null,
+          "low_stock": null,
+          "legacy_note": null
+        }
+      ]
+    },
+    {
+      "name": "other workspace is isolated",
+      "parameters": {
+        "workspace": "demo-b"
+      },
+      "expected_count": 1,
+      "expected_rows": [
+        {
+          "sku": "DEMO-01",
+          "name": "Other workspace example",
+          "stock_value": 900,
+          "aisle": "Other sample shelf"
+        }
+      ]
+    },
+    {
+      "name": "NULL scope does not select a workspace",
+      "parameters": {
+        "workspace": null
+      },
+      "expected_count": 0
+    },
+    {
+      "name": "absent workspace returns no rows",
+      "parameters": {
+        "workspace": "missing-demo"
+      },
+      "expected_count": 0
+    }
+  ]
+}

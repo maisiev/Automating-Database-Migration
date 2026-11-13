@@ -1,0 +1,8 @@
+{
+  "format_version": 1,
+  "report": "report.json",
+  "schema": "schema.json",
+  "plan": "plan.json",
+  "fixtures": "fixtures.json",
+  "dialect": "sqlserver"
+}

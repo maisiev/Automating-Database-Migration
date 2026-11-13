@@ -1,0 +1,19 @@
+{
+  "format_version": 1,
+  "tables": {
+    "products": {
+      "workspace": "text",
+      "sku": "text",
+      "title": "text",
+      "available": "integer",
+      "unit_price": "number",
+      "aisle_id": "integer",
+      "enabled": "boolean"
+    },
+    "aisles": {
+      "workspace": "text",
+      "id": "integer",
+      "name": "text"
+    }
+  }
+}

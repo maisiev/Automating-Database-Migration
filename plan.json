@@ -1,0 +1,138 @@
+{
+  "format_version": 1,
+  "source": {
+    "table": "products",
+    "alias": "p",
+    "reviewed": true
+  },
+  "source_review": "Synthetic source: one row per workspace and product code.",
+  "joins": [
+    {
+      "table": "aisles",
+      "alias": "a",
+      "kind": "left",
+      "on": {
+        "op": "and",
+        "args": [
+          {
+            "op": "eq",
+            "args": [
+              {
+                "column": "p.aisle_id"
+              },
+              {
+                "column": "a.id"
+              }
+            ]
+          },
+          {
+            "op": "eq",
+            "args": [
+              {
+                "column": "p.workspace"
+              },
+              {
+                "column": "a.workspace"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "parameters": {
+    "workspace": {
+      "type": "text",
+      "default": null
+    }
+  },
+  "scope": {
+    "column": "p.workspace",
+    "parameter": "workspace"
+  },
+  "where": [
+    {
+      "op": "eq",
+      "args": [
+        {
+          "column": "p.enabled"
+        },
+        {
+          "literal": true
+        }
+      ]
+    }
+  ],
+  "columns": [
+    {
+      "source": "legacy_code",
+      "output": "sku",
+      "expression": {
+        "column": "p.sku"
+      },
+      "evidence": "Explicit mapping defined for this fictional example; no production equivalence is claimed."
+    },
+    {
+      "source": "legacy_name",
+      "output": "name",
+      "expression": {
+        "column": "p.title"
+      },
+      "evidence": "Explicit mapping defined for this fictional example; no production equivalence is claimed."
+    },
+    {
+      "source": "legacy_quantity",
+      "output": "quantity",
+      "expression": {
+        "column": "p.available"
+      },
+      "evidence": "Explicit mapping defined for this fictional example; no production equivalence is claimed."
+    },
+    {
+      "source": "legacy_value",
+      "output": "stock_value",
+      "expression": {
+        "op": "multiply",
+        "args": [
+          {
+            "column": "p.available"
+          },
+          {
+            "column": "p.unit_price"
+          }
+        ]
+      },
+      "evidence": "Explicit mapping defined for this fictional example; no production equivalence is claimed."
+    },
+    {
+      "source": "legacy_aisle",
+      "output": "aisle",
+      "expression": {
+        "column": "a.name"
+      },
+      "evidence": "Explicit mapping defined for this fictional example; no production equivalence is claimed."
+    },
+    {
+      "source": "legacy_low",
+      "output": "low_stock",
+      "expression": {
+        "op": "le",
+        "args": [
+          {
+            "column": "p.available"
+          },
+          {
+            "literal": 5
+          }
+        ]
+      },
+      "evidence": "Explicit mapping defined for this fictional example; no production equivalence is claimed."
+    },
+    {
+      "source": "legacy_note",
+      "output": "legacy_note",
+      "expression": null,
+      "review": "No matching target field is defined in this fictional example."
+    }
+  ]
+}
