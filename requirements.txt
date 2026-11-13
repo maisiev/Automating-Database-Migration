@@ -1,2 +1,2 @@
-sqlglot==30.31.0
-openpyxl==3.1.5
+# No third-party runtime or test dependencies.
+# Run with a supported Python 3 release; the code uses standard-library APIs.

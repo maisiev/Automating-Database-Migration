@@ -1,0 +1,26 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    ".gitignore": "6d401e18119a82eecad4aac18998f25861b95dcb541eb27721aef42b21189da5",
+    "PUBLISHING.md": "0116a0fb11c66db3d3b8e6a5d08a249d73a606e4bf3a52b06b36f8e602f6be48",
+    "README.md": "51898037570fcbccd7c384b7da033203149a0fd9abacf901e387d35baa97ad08",
+    "examples/fixtures.json": "1f16c9fad2e342ed67cecd99c86349ee7663f274b621d76ffab9c52cd2d082ee",
+    "examples/plan.json": "6c34bd76a89358d499d3bdcba022320a09a0524390fb66ab3b89fb41daaf1b25",
+    "examples/project.json": "a78bc2af03c11e7f7d128a9749746fe8680fe70ac0ab66df67567b9c28179c4d",
+    "examples/report.json": "68ecbe8ec4dcf6d19bb0a67728654aa2c15881fcd6dcb2c255845e1f72e9298b",
+    "examples/schema.json": "255b1ef66c0f81959731c56f9afc801cbd9d1561b48fec2d942f4e1ad6cd2a6e",
+    "report_workbench/__init__.py": "a54c19f04fe9b601c8a006e5fbaeb76d6aad97e9ee71db5e5b43ea1237b594e9",
+    "report_workbench/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "report_workbench/audit.py": "5721c35521e2768ce33b4c6d6a4295415d0565b114364cf8b5f3aa1942146d9b",
+    "report_workbench/bundles.py": "260cea9df7e6b5756f42b5b9e68dac3cb96ad2d0c6d7db7293c75ff4412e9a60",
+    "report_workbench/checks.py": "b634cb356049d3cff8fc596c44466b32ca9eeca5732a6e8b8f164755c17301a3",
+    "report_workbench/cli.py": "4d8d9a206bf37662210ab5a96fb26ed4dbc59556bf31ed4c3212fdac1835a4a1",
+    "report_workbench/compiler.py": "1a99d599750ff6e847b96b441b52b751cca5c8cbcaa5aa6d755b3fff2e26744b",
+    "report_workbench/contracts.py": "5cfbf67b412afa503a0716e084c9c38ef4b5d29e338899be1cf4d58b5ea20ef1",
+    "requirements.txt": "e2a23399d4b690cbfd714354f068a1f26bc71cf00c423d1990215aed19b3ee94",
+    "tests/test_workbench.py": "1ed5255470e33cabdb2e58f9faa771441363e0f91733e656e7fbcd51cb846548",
+    "verification.json": "d506db8b0217fcddd23c9cf13725f717d7272867cc804f49ae36d30a045a4ca8"
+  },
+  "format_version": 1,
+  "scope": "Distribution files only. This manifest excludes itself; no generated outputs, private inputs, caches or repository history are included."
+}
